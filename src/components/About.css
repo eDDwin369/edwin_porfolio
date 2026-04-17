@@ -1,0 +1,100 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-image-container {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.about-bio {
+  font-size: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.experience-section {
+  margin-bottom: 4rem;
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-left: 2px solid var(--border-color);
+  padding-left: 2rem;
+}
+
+.job-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.job-role {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.job-company {
+  color: var(--text-secondary);
+}
+
+.job-date {
+  color: var(--accent-pink);
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.cv-download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.cv-download h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image-container {
+    position: static;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .job-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  
+  .job-date {
+    text-align: left;
+  }
+
+  .cv-download {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
