@@ -47,8 +47,9 @@ const Works = () => {
     <section id="works" className="works-section">
       <div className="container">
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="section-subtext"
         >
@@ -59,10 +60,11 @@ const Works = () => {
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.15 }}
+              whileHover={{ scale: 1.02 }}
               className="project-card pill-card"
             >
               <div className="project-content">

@@ -1,12 +1,14 @@
 import React from 'react';
 import './Navigation.css';
+import { FiSend } from "react-icons/fi";
+
 
 const Navigation = () => {
   return (
     <header className="nav-glass header-fixed">
       <div className="container nav-container">
         <div className="nav-logo">
-          <a href="#home">edwin</a>
+          <a href="#home">Edwin Antony</a>
         </div>
 
         <nav className="nav-links">
@@ -18,11 +20,11 @@ const Navigation = () => {
           </ul>
         </nav>
 
-        <div className="nav-cta">
-          <a href="mailto:timofey.bak@gmail.com" className="pill-button">
-            Email Me
-          </a>
-        </div>
+       <div className="nav-cta">
+  <a href="mailto:timofey.bak@gmail.com" className="pill-button">
+    Email Me <FiSend />
+  </a>
+</div>
       </div>
     </header>
   );

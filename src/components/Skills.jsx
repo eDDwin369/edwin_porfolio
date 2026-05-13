@@ -7,8 +7,9 @@ const Skills = () => {
     <section id="skills" className="skills-section">
       <div className="container">
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="section-subtext"
         >
@@ -18,9 +19,11 @@ const Skills = () => {
         <div className="skills-grid">
           <div className="skills-descriptions">
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ scale: 1.02 }}
               className="skill-block"
             >
               <h3>Design</h3>
@@ -28,10 +31,11 @@ const Skills = () => {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ scale: 1.02 }}
               className="skill-block"
             >
               <h3>Building</h3>
@@ -39,10 +43,11 @@ const Skills = () => {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+              initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ scale: 1.02 }}
               className="skill-block"
             >
               <h3>Enhancing</h3>
@@ -50,7 +55,14 @@ const Skills = () => {
             </motion.div>
           </div>
           
-          <div className="skills-lists pill-card">
+          <motion.div 
+            initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.55 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ scale: 1.02 }}
+            className="skills-lists pill-card"
+          >
             <div className="list-group">
               <h4 className="list-title">I do</h4>
               <ul>
@@ -80,7 +92,7 @@ const Skills = () => {
                 <li><span>Prototyping and animation tools</span></li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

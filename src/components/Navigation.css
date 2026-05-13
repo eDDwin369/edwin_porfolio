@@ -1,3 +1,4 @@
+/* ===== HEADER ===== */
 .header-fixed {
   position: fixed;
   top: 0;
@@ -7,34 +8,90 @@
   padding: 1rem 0;
 }
 
+/* ===== NAV CONTAINER ===== */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ===== LOGO ===== */
 .nav-logo a {
   font-size: 1.25rem;
+  font-family: 'Caveat', cursive;
+  color: #DE215A;
   font-weight: 700;
   letter-spacing: -0.02em;
+  text-decoration: none;
 }
 
+/* ===== NAV LINKS ===== */
 .nav-links ul {
   display: flex;
   gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* Base link */
 .nav-links a {
+  position: relative;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #000;                 /* ✅ black initially */
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--text-primary);
+/* Underline (hidden) */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: #D63864;        /* pink */
+  transition: width 0.25s ease;
 }
 
+/* Hover */
+.nav-links a:hover {
+  color: #D63864;             /* ✅ pink text */
+}
+
+.nav-links a:hover::after {
+  width: 100%;                /* ✅ underline animation */
+}
+
+/* ===== BUTTON ===== */
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #ff2e63, #d81b60);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(216, 27, 96, 0.25);
+  transition: all 0.3s ease;
+}
+
+.pill-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(216, 27, 96, 0.35);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
