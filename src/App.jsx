@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Works from './components/Works';
 import Skills from './components/Skills';
 import About from './components/About';
+import MeetSection from './components/MeetSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Works />
         <Skills />
         <About />
+        <MeetSection />
       </main>
       <Footer />
     </>
