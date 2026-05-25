@@ -9,35 +9,23 @@ import placeverImg from '../assets/project_placever_1776359311873.png';
 
 const projects = [
   {
+    id: "voos-cinema",
     title: "Voo's Cinema",
     desc: "Ultimate american mobile ticketing app for a seamless movie experience at offline cinemas. All in one place.",
     location: "USA",
     year: "2025",
-    link: "#",
+    link: "#/project/voos-cinema",
     img: voosImg,
   },
+
+
   {
-    title: "Credroad",
-    desc: "Personal credit-management website to enable users to track and improve their credit score + apply for new credit cards.",
-    location: "USA",
-    year: "2024",
-    link: "#",
-    img: credroadImg,
-  },
-  {
-    title: "Suplan",
-    desc: "Mobile app for customer service teams to receive, manage, and report on incoming service requests.",
-    location: "Israel",
-    year: "2024",
-    link: "#",
-    img: suplanImg,
-  },
-  {
+    id: "placever",
     title: "Placever",
     desc: "Tourist and navigation mobile app, which helps people who are walking around the city to discover local places and sights.",
     location: "EU",
     year: "2023",
-    link: "#",
+    link: "#/project/placever",
     img: placeverImg,
   }
 ];
@@ -46,7 +34,7 @@ const Works = () => {
   return (
     <section id="works" className="works-section">
       <div className="container">
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,11 +43,11 @@ const Works = () => {
         >
           What I'm proud of :
         </motion.p>
-        
+
         <div className="projects-list">
           {projects.map((project, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -70,18 +58,18 @@ const Works = () => {
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc text-muted">{project.desc}</p>
-                
+
                 <div className="project-meta">
                   <span className="tag">{project.location}</span>
                   <span className="tag">{project.year}</span>
                 </div>
-                
+
                 <a href={project.link} className="project-link">
                   View full UX case
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </a>
               </div>
-              
+
               <div className="project-image">
                 <img src={project.img} alt={project.title} />
               </div>

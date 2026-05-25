@@ -277,7 +277,7 @@ export default function ContactSection() {
   return (
     <>
       <style>{style}</style>
-      <div className="contact-page">
+      <div id="connect" className="contact-page">
 
         {/* Main content */}
         <div className="contact-body">
