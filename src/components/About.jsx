@@ -13,7 +13,7 @@ const About = () => {
           <motion.div 
             initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
             className="about-left"
           >
@@ -27,7 +27,7 @@ const About = () => {
           <motion.div 
             initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             viewport={{ once: true, margin: "-50px" }}
             whileHover={{ scale: 1.02 }}
             className="about-middle"
@@ -44,7 +44,7 @@ const About = () => {
           <motion.div 
             initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             viewport={{ once: true, margin: "-50px" }}
             className="about-right"
           >
@@ -59,25 +59,25 @@ const About = () => {
             <div className="experience-section">
               <div className="jobs-header">
                 <h3>Recent jobs /</h3>
-                <button className="download-btn">Download File</button>
+                <button className="download-btn">Download CV</button>
               </div>
               
               <div className="jobs-list">
                 <div className="job-item">
-                  <div className="job-role">Senior UI/UX Designer</div>
+                  <div className="job-role">UI/UX & Product Designer</div>
                   <div className="job-company">Chordify</div>
                   <div className="job-date">2023 → Now</div>
                 </div>
-                <div className="job-item">
+                {/* <div className="job-item">
                   <div className="job-role">UI/UX Designer</div>
                   <div className="job-company">Spinny</div>
                   <div className="job-date">2021 → 2025</div>
-                </div>
-                <div className="job-item">
+                </div> */}
+                {/* <div className="job-item">
                   <div className="job-role">Product Designer</div>
                   <div className="job-company">Byjus</div>
                   <div className="job-date">2019 → 2021</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>

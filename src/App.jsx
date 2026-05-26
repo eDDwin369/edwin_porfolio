@@ -41,7 +41,14 @@ function App() {
   }, []);
 
   const handleBackToHome = () => {
-    window.location.hash = '#works';
+    setCurrentProject(null);
+    window.location.hash = ''; // Clear the hash to keep the URL clean
+    setTimeout(() => {
+      const element = document.getElementById('works');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   return (

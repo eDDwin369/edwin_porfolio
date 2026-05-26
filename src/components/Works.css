@@ -21,6 +21,7 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 4rem;
   align-items: center;
+  will-change: transform, opacity, filter;
 }
 
 .project-card:nth-child(even) {
@@ -71,6 +72,9 @@
 }
 
 .project-image {
+  max-width: 230px;
+  max-height: 450px;
+  margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);

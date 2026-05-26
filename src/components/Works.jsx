@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Works.css';
 
-import voosImg from '../assets/project_voos_1776359260540.png';
+import voosImg from '../assets/project_voos_1776359260540.avif';
 import credroadImg from '../assets/project_credroad_1776359281133.png';
 import suplanImg from '../assets/project_suplan_1776359295831.png';
-import placeverImg from '../assets/project_placever_1776359311873.png';
+import placeverImg from '../assets/project_placever_1776359311873.avif';
 
 const projects = [
   {
@@ -13,7 +13,7 @@ const projects = [
     title: "Voo's Cinema",
     desc: "Ultimate american mobile ticketing app for a seamless movie experience at offline cinemas. All in one place.",
     location: "USA",
-    year: "2025",
+    // year: "2025",
     link: "#/project/voos-cinema",
     img: voosImg,
   },
@@ -24,7 +24,7 @@ const projects = [
     title: "Placever",
     desc: "Tourist and navigation mobile app, which helps people who are walking around the city to discover local places and sights.",
     location: "EU",
-    year: "2023",
+    // year: "2023",
     link: "#/project/placever",
     img: placeverImg,
   }
@@ -35,9 +35,9 @@ const Works = () => {
     <section id="works" className="works-section">
       <div className="container">
         <motion.p
-          initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="section-subtext"
         >
@@ -48,21 +48,18 @@ const Works = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+              initial={{ opacity: 0, y: 50, filter: 'blur(10px)', scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.15 }}
-              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: index * 0.15 }}
+              whileHover={{ y: -8, scale: 1.01 }}
               className="project-card pill-card"
             >
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc text-muted">{project.desc}</p>
 
-                <div className="project-meta">
-                  <span className="tag">{project.location}</span>
-                  <span className="tag">{project.year}</span>
-                </div>
+      
 
                 <a href={project.link} className="project-link">
                   View full UX case

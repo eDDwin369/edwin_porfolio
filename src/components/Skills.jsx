@@ -181,9 +181,9 @@ const Skills = () => {
     <section id="skills" className="skills-section">
       <div className="container">
         <motion.p
-          initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="section-subtext"
         >
@@ -196,9 +196,9 @@ const Skills = () => {
             {skillBlocks.map((block, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 40, filter: 'blur(6px)' }}
-                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.7, ease: 'easeOut', delay: block.delay }}
+                initial={{ opacity: 0, y: 40, filter: 'blur(8px)', scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: block.delay }}
                 viewport={{ once: true, margin: '-50px' }}
                 className="skill-block"
               >
@@ -217,11 +217,11 @@ const Skills = () => {
 
           {/* Right — Info Card */}
           <motion.div
-            initial={{ opacity: 0, y: 50, filter: 'blur(8px)', scale: 0.95 }}
+            initial={{ opacity: 0, y: 50, filter: 'blur(10px)', scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.55 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.015 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -6, scale: 1.005 }}
             className="skills-lists pill-card"
           >
             <div className="list-group">
@@ -263,9 +263,9 @@ const Skills = () => {
                     key={tool.name}
                     className="tool-chip"
                     style={{ '--rotate': `${tool.rotate}deg` }}
-                    initial={{ opacity: 0, scale: 0.7, y: 12 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.45, ease: 'backOut', delay: 0.6 + tool.delay }}
+                    initial={{ opacity: 0, scale: 0.75, y: 15, filter: 'blur(4px)' }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 + tool.delay }}
                     viewport={{ once: true }}
                     whileHover={{ y: -6, scale: 1.12, rotate: 0 }}
                     title={tool.name}

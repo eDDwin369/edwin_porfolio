@@ -11,6 +11,11 @@
   gap: 3rem;
   align-items: center;
 }
+.about-left,
+.about-middle,
+.about-right {
+  will-change: transform, opacity, filter;
+}
 
 /* Left Column */
 .intro-text {
