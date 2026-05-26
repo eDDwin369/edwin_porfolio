@@ -97,3 +97,139 @@
     display: none;
   }
 }
+
+/* ===== CASE STUDY NAVIGATION ===== */
+.case-study-nav {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.case-study-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.case-study-works-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.case-study-works-link svg rect {
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+.case-study-works-link:hover {
+  color: var(--accent-pink);
+  transform: translateX(-3px);
+}
+
+.case-study-works-link:hover svg rect {
+  fill: var(--text-primary);
+  stroke: var(--text-primary);
+}
+
+.case-study-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.scroll-top-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.scroll-top-chevron:hover {
+  color: var(--accent-pink);
+  transform: translateY(-3px);
+}
+
+.case-study-links ul {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.case-study-links a {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.case-study-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-pink);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-study-links a:hover {
+  color: var(--text-primary);
+}
+
+.case-study-links a:hover::after {
+  width: 100%;
+}
+
+/* Scroll Offset for fixed header navigation targetting */
+#overview, #research, #wireframes, #design, #outcome {
+  scroll-margin-top: 100px;
+}
+
+/* Responsive adjustments for Case Study Navbar */
+@media (max-width: 768px) {
+  .case-study-menu {
+    gap: 1.25rem;
+  }
+  .case-study-links ul {
+    gap: 1.25rem;
+  }
+  .case-study-links a {
+    font-size: 0.875rem;
+  }
+  .scroll-top-chevron {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .case-study-works-link span {
+    display: none; /* Hide "Works" text, only show grid icon */
+  }
+  .case-study-works-link {
+    padding: 4px;
+  }
+  .case-study-works-link:hover {
+    transform: scale(1.1);
+  }
+  .scroll-top-chevron {
+    display: none; /* Hide chevron on mobile to preserve layout integrity */
+  }
+  .case-study-menu {
+    gap: 0.75rem;
+  }
+  .case-study-links ul {
+    gap: 0.75rem;
+  }
+  .case-study-links a {
+    font-size: 0.8rem;
+  }
+}

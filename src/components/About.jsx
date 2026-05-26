@@ -59,7 +59,14 @@ const About = () => {
             <div className="experience-section">
               <div className="jobs-header">
                 <h3>Recent jobs /</h3>
-                <button className="download-btn">Download CV</button>
+                <a
+                  href="/edwin_antony_cv.pdf"
+                  download="Edwin_Antony_CV.pdf"
+                  className="download-btn"
+                  style={{ textDecoration: 'none', display: 'inline-block' }}
+                >
+                  Download CV
+                </a>
               </div>
               
               <div className="jobs-list">

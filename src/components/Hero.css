@@ -379,7 +379,7 @@
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
-    padding: 60px 0;
+    padding: 120px 0 60px 0; /* Increased top padding to clear fixed navbar in mobile view */
   }
 
   .hero-left,

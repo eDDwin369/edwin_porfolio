@@ -679,17 +679,19 @@ const ProjectDetail = ({ projectId, onBack }) => {
       <div className="container">
 
         {/* Back Link */}
-        <motion.div
-          className="back-btn-container"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <a href="#works" onClick={handleBackClick} className="back-link">
-            <FiArrowLeft size={18} />
-            <span>Back to Works</span>
-          </a>
-        </motion.div>
+        {!(projectId === "voos-cinema" || projectId === "placever") && (
+          <motion.div
+            className="back-btn-container"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <a href="#works" onClick={handleBackClick} className="back-link">
+              <FiArrowLeft size={18} />
+              <span>Back to Works</span>
+            </a>
+          </motion.div>
+        )}
 
         {/* Project Header Banner */}
         <motion.div
@@ -699,17 +701,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="project-banner-content">
-            {projectId === "voos-cinema" ? (
-              <div className="banner-logo-wrapper">
-                <span className="logo-text-v">v</span>
-                <span className="logo-circle-pink">
-                  <span className="logo-circle-white">
-                    <span className="logo-circle-dot"></span>
-                  </span>
-                </span>
-                <span className="logo-text-s">'s</span>
-              </div>
-            ) : projectId === "credroad" ? (
+            {projectId === "voos-cinema" || projectId === "placever" ? null : projectId === "credroad" ? (
               <div className="banner-logo-wrapper text-accent">
                 <FiCheckSquare className="pink-icon-flat" size={32} style={{ marginRight: '8px', color: 'var(--accent-pink)' }} />
                 <span style={{ fontSize: '1.85rem', fontWeight: '700' }}>Credroad</span>
@@ -719,15 +711,9 @@ const ProjectDetail = ({ projectId, onBack }) => {
                 <FiZap className="pink-icon-flat" size={32} style={{ marginRight: '8px', color: 'var(--accent-pink)' }} />
                 <span style={{ fontSize: '1.85rem', fontWeight: '700' }}>Suplan</span>
               </div>
-            ) : (
-              <div className="banner-logo-wrapper text-accent">
-                <FiTarget className="pink-icon-flat" size={32} style={{ marginRight: '8px', color: 'var(--accent-pink)' }} />
-                <span style={{ fontSize: '1.85rem', fontWeight: '700' }}>Placever</span>
-              </div>
-            )}
+            ) : null}
 
             <h1 className="project-banner-title">{project.title}</h1>
-
             <div className="banner-meta-grid">
               <div className="meta-item">
                 <span className="meta-label"></span>
@@ -809,6 +795,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
 
         {/* Exact Layout Replica of Project Overview */}
         <motion.div
+          id="overview"
           className="project-overview-section"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -890,6 +877,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
 
         {/* User Research Intro Section */}
         <motion.div
+          id="research"
           className="project-research-section"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1225,6 +1213,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
 
         {/* Paper Wireframes Section (Added Exactly After Appmap) */}
         <motion.div
+          id="wireframes"
           className="project-paper-wireframes-section"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1379,6 +1368,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
 
         {/* Refining Design Section (Added Exactly After Usability Studies) */}
         <motion.div
+          id="design"
           className="project-refining-design-section"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1557,7 +1547,7 @@ const ProjectDetail = ({ projectId, onBack }) => {
 
         {/* Outcome & Takeaways Section */}
         {project.outcomeText && (
-          <div className="project-outcome-container">
+          <div className="project-outcome-container" id="outcome">
 
             {/* Outcome Header Row */}
             <motion.div
