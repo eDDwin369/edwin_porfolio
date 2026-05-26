@@ -11,12 +11,20 @@ function App() {
   const [currentProject, setCurrentProject] = useState(null);
 
   useEffect(() => {
+    // Disable standard browser scroll restoration so refresh always starts at the top
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll instantly to the very top (Hero section) on initial page mount
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#/project/')) {
         const projectId = hash.replace('#/project/', '');
         setCurrentProject(projectId);
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       } else {
         setCurrentProject(null);
         if (hash && hash !== '#' && hash !== '#home') {
@@ -29,7 +37,7 @@ function App() {
             }
           }, 50);
         } else {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         }
       }
     };
